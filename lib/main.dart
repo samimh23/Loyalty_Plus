@@ -5,30 +5,22 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:untitled6/firebase_options.dart';
 
-import 'features/auth/domain/use_cases/sign_in_with_google_use_case.dart';
-import 'features/auth/presentation/screens/LoginScrren.dart';
-
-// Import your Bloc, repository, usecase, and service
+import 'core/di/service_locator.dart' as di;
 import 'features/auth/presentation/bloc/auth_bloc.dart';
-import 'features/auth/data/datasources/google_sign_in_service.dart';
-import 'features/auth/data/repositories/auth_repository_impl.dart';
+import 'features/auth/presentation/screens/LoginScrren.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
-  // Set up dependencies
-  final googleSignInService = GoogleSignInService();
-  final authRepository = AuthRepositoryImpl(googleSignInService);
-  final signInWithGoogle = SignInWithGoogle(authRepository);
+  await di.init(); // Initialize DI
 
   runApp(
     DevicePreview(
       enabled: !kReleaseMode,
       builder: (context) => BlocProvider<AuthBloc>(
-        create: (context) => AuthBloc(signInWithGoogle: signInWithGoogle),
+        create: (context) => di.sl<AuthBloc>(),
         child: const MyApp(),
       ),
     ),
