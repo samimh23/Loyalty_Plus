@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "224673719231",
+    "project_id": "fir-db-dabac",
+    "storage_bucket": "fir-db-dabac.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:224673719231:android:a0a948fe12af1fd678f70a",
+        "android_client_info": {
+          "package_name": "com.example.untitled6"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "224673719231-av22qv9ae7k32p6qo3lilb9f2anhrabh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.untitled6",
+            "certificate_hash": "ea990752e90bac54d6d3f492ba9fd033b335c038"
+          }
+        },
+        {
+          "client_id": "224673719231-e1o74ikg67spfg2jmskbjr1cf9apunvo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlbr3mOxQu_u_DaCzPWemS6QtpABOeH3U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "224673719231-e1o74ikg67spfg2jmskbjr1cf9apunvo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "224673719231-cnvf42keovendm8q2o55k5o4deam0j71.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.untitled6"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
