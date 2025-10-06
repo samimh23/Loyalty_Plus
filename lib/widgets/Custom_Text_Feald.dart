@@ -11,7 +11,7 @@ class CustomTextField extends StatelessWidget {
     super.key,
     required this.controller,
     required this.hint,
-    this.obscureText = false,
+    this.obscureText = false, required TextInputAction textInputAction,
   });
 
   @override

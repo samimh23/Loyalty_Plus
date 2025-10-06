@@ -8,6 +8,7 @@ import 'package:untitled6/firebase_options.dart';
 import 'core/di/service_locator.dart' as di;
 import 'features/auth/presentation/bloc/auth_bloc.dart';
 import 'features/auth/presentation/screens/LoginScrren.dart';
+import 'home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,12 +18,9 @@ void main() async {
   await di.init(); // Initialize DI
 
   runApp(
-    DevicePreview(
-      enabled: !kReleaseMode,
-      builder: (context) => BlocProvider<AuthBloc>(
-        create: (context) => di.sl<AuthBloc>(),
-        child: const MyApp(),
-      ),
+    BlocProvider<AuthBloc>(
+      create: (context) => di.sl<AuthBloc>(),
+      child: const MyApp(),
     ),
   );
 }
@@ -40,7 +38,11 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         useMaterial3: true,
       ),
-      home: const LoginScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const LoginScreen(),
+        '/home': (context) => const Home(),
+      },
     );
   }
 }
